@@ -36,6 +36,44 @@
         height: 100%;
         z-index: 1;
       }
+
+      .blur-load {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .blur-load::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      animation: pulse 2.5s infinite;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0; }
+      50% { opacity: 0.3; }
+      100% { opacity: 0; }
+    }
+
+    .blur-load.loaded::before {
+      animation: none;
+      content: none;
+    }
+
+    .blur-load img {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .blur-load.loaded img {
+      opacity: 1;
+    }
     </style>
   </head>
   <body>
@@ -133,7 +171,10 @@
               <!-- Product 1 -->
               <div class="el-wrapper slide-in">
                 <div class="box-up">
-                  <img class="img" src="image/Ts-Eras/main.png" alt="Taylor Swift Eras Tour Album Collage">
+                  <div class="blur-load" style="background-image:url(./image/Ts-Eras/main-small.jpg);">
+                    <img class="img" src="image/Ts-Eras/main.png" alt="Taylor Swift Eras Tour Album Collage">
+
+                  </div>
                   <div class="img-info">
                     <div class="info-inner">
                       <span class="p-name">Taylor Swift Eras Tour Album Collage</span>
@@ -158,7 +199,10 @@
               <!-- Product 2 -->
               <div class="el-wrapper slide-in">
                 <div class="box-up">
-                  <img class="img" src="image/Ts-Tour/main.png" alt="Taylor Swift Eras Tour Outfit">
+                  <div class="blur-load" style="background-image:url(./image/Ts-Tour/main-small.jpg)">
+
+                    <img class="img" src="image/Ts-Tour/main.png" alt="Taylor Swift Eras Tour Outfit">
+                  </div>
                   <div class="img-info">
                     <div class="info-inner">
                       <span class="p-name">Taylor Swift Eras Tour Outfit</span>
@@ -183,7 +227,10 @@
               <!-- Product 3 -->
               <div class="el-wrapper slide-in">
                 <div class="box-up">
-                  <img class="img" src="image/Ts-illustrations/main.png" alt="Taylor Swift Illustrations">
+                  <div class="blur-load" style="background-image:url(./image/Ts-illustrations/main-small.jpg);">
+
+                    <img class="img" src="image/Ts-illustrations/main.png" alt="Taylor Swift Illustrations">
+                  </div>
                   <div class="img-info">
                     <div class="info-inner">
                       <span class="p-name">Taylor Swift Illustrations</span>
@@ -208,7 +255,10 @@
               <!-- Product 4 -->
               <div class="el-wrapper slide-in">
                 <div class="box-up">
-                  <img class="img" src="image/Banaras/main.png" alt="Handcrafted Varanasi Art">
+                  <div class="blur-load" style="background-image:url(./image/Banaras/main-small.jpg);">
+
+                    <img class="img" src="image/Banaras/main.png" alt="Handcrafted Varanasi Art">
+                  </div>
                   <div class="img-info">
                     <div class="info-inner">
                       <span class="p-name">Handcrafted Varanasi Art</span>
@@ -932,6 +982,24 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
     
+
+function blurLoadImages() {
+  const blurDivs = document.querySelectorAll('.blur-load');
+  
+  blurDivs.forEach(div => {
+    const img = div.querySelector('img');
+    
+    function loaded() {
+      div.classList.add('loaded');
+    }
+    
+    if (img.complete) {
+      loaded();
+    } else {
+      img.addEventListener('load', loaded);
+    }
+  });
+}
     
     </script>
   </body>
