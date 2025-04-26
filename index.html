@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-P4TWCZKD");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Night Owl</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cinzel&family=Poppins:wght@400;600&display=swap"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/product.css" />
+    <style>
+      /* Added styles for animated stars */
+      #starry-canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-P4TWCZKD"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- navbar -->
+    <nav class="pink-navbar">
+      <div class="pink-navbar-container">
+        <a href="./index.html" class="pink-logo">
+          <img src="image/logo.png" alt="Logo" />
+        </a>
+        
+        <div class="pink-hamburger" id="hamburger" aria-label="Toggle navigation" data-open="false">
+          <div class="hamburger-box">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </div>
+        </div>
+    
+    <div class="pink-nav-links" id="nav-links">
+      <ul>
+        <li><a href="./index.html" class="nav-link">Home</a></li>
+        <li><a href="./index.html" class="nav-link">Products</a></li>
+        <li><a href="./index.html" class="nav-link">About Us</a></li>
+        <li><a href="./index.html" class="nav-link">Blogs</a></li>
+        <li><a href="./index.html" class="register-btn">Register</a></li>
+      </ul>
+    </div>
+  </div>
+    </nav>
+
+    <!-- header-section -->
+    <div id="large-header" class="large-header">
+      <canvas id="demo-canvas"></canvas>
+      
+      <!-- Fixed centered container -->
+      <div class="content-container">
+        <!-- Owl animation -->
+        <div class="owl-container">
+          <div class="owl">
+            <div class="owl-body"></div>
+            <div class="owl-face">
+              <div class="owl-eye left"></div>
+              <div class="owl-eye right"></div>
+              <div class="owl-beak"></div>
+            </div>
+            <div class="owl-wing left"></div>
+            <div class="owl-wing right"></div>
+            <div class="owl-feet left"></div>
+            <div class="owl-feet right"></div>
+            <div class="owl-shadow"></div>
+          </div>
+        </div>
+        
+        <!-- Floating content -->
+        <div class="particles-content">
+          <h1>Night Owl</h1>
+          <p>
+            Innocence it was, he was midnight, and I was sunshine<br>
+            After that incident we never met again
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- content-section -->
+
+    <div class="content-section" id="about">
+      <div class="text-content">
+        <h1>Infusing quality time <br />into your Daily</h1>
+      </div>
+      <div class="image-content">
+        <img src="image/image.jpeg" alt="Quality Time" />
+      </div>
+    </div>
+
+    <!-- products-section -->
+
+    <div class="products-section" id="pro">
+      <h1>Products</h1>
+      <div class="row yo">
+        <div class="container page-wrapper">
+          <div class="page-inner">
+            <div class="row yo">
+              <!-- Product 1 -->
+              <div class="el-wrapper slide-in">
+                <div class="box-up">
+                  <img class="img" src="image/Ts-Eras/main.png" alt="Taylor Swift Eras Tour Album Collage">
+                  <div class="img-info">
+                    <div class="info-inner">
+                      <span class="p-name">Taylor Swift Eras Tour Album Collage</span>
+                      <span class="p-company">Limited Edition</span>
+                    </div>
+                    <div class="a-size">High Quality Prints</div>
+                  </div>
+                </div>
+                <div class="box-down">
+                  <div class="h-bg">
+                    <div class="h-bg-inner"></div>
+                  </div>
+                  <a class="cart" href="/Ts-ErasTour.html">
+                    <span class="price">$9.99</span>
+                    <span class="add-to-cart">
+                      <span class="txt">Know More</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Product 2 -->
+              <div class="el-wrapper slide-in">
+                <div class="box-up">
+                  <img class="img" src="image/Ts-Tour/main.png" alt="Taylor Swift Eras Tour Outfit">
+                  <div class="img-info">
+                    <div class="info-inner">
+                      <span class="p-name">Taylor Swift Eras Tour Outfit</span>
+                      <span class="p-company">Fashion Collection</span>
+                    </div>
+                    <div class="a-size">Exclusive Design</div>
+                  </div>
+                </div>
+                <div class="box-down">
+                  <div class="h-bg">
+                    <div class="h-bg-inner"></div>
+                  </div>
+                  <a class="cart" href="/Ts-outfit.html">
+                    <span class="price">$4.99</span>
+                    <span class="add-to-cart">
+                      <span class="txt">Know More</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Product 3 -->
+              <div class="el-wrapper slide-in">
+                <div class="box-up">
+                  <img class="img" src="image/Ts-illustrations/main.png" alt="Taylor Swift Illustrations">
+                  <div class="img-info">
+                    <div class="info-inner">
+                      <span class="p-name">Taylor Swift Illustrations</span>
+                      <span class="p-company">Artistic Collection</span>
+                    </div>
+                    <div class="a-size">Hand-drawn Art</div>
+                  </div>
+                </div>
+                <div class="box-down">
+                  <div class="h-bg">
+                    <div class="h-bg-inner"></div>
+                  </div>
+                  <a class="cart" href="/Ts-Illustrations.html">
+                    <span class="price">$2.99</span>
+                    <span class="add-to-cart">
+                      <span class="txt">Know More</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Product 4 -->
+              <div class="el-wrapper slide-in">
+                <div class="box-up">
+                  <img class="img" src="image/Banaras/main.png" alt="Handcrafted Varanasi Art">
+                  <div class="img-info">
+                    <div class="info-inner">
+                      <span class="p-name">Handcrafted Varanasi Art</span>
+                      <span class="p-company">Cultural Heritage</span>
+                    </div>
+                    <div class="a-size">Authentic Craftsmanship</div>
+                  </div>
+                </div>
+                <div class="box-down">
+                  <div class="h-bg">
+                    <div class="h-bg-inner"></div>
+                  </div>
+                  <a class="cart" href="/Banaras.html">
+                    <span class="price">$3.99</span>
+                    <span class="add-to-cart">
+                      <span class="txt">Know More</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <style>
+        /* Animation styles */
+        .slide-in {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .slide-in.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        /* Sequential animation delays for products */
+        .el-wrapper.slide-in:nth-child(1) {
+          transition-delay: 0.1s;
+        }
+        
+        .el-wrapper.slide-in:nth-child(2) {
+          transition-delay: 0.3s;
+        }
+        
+        .el-wrapper.slide-in:nth-child(3) {
+          transition-delay: 0.5s;
+        }
+        
+        .el-wrapper.slide-in:nth-child(4) {
+          transition-delay: 0.7s;
+        }
+      </style>
+      
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          // Intersection Observer to detect when elements enter viewport
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Once it's visible, no need to observe anymore
+                observer.unobserve(entry.target);
+              }
+            });
+          }, {
+            root: null, // viewport
+            threshold: 0.15, // trigger when at least 15% of the element is visible
+            rootMargin: '0px' // no margin
+          });
+          
+          // Get all elements with the slide-in class
+          const slideElements = document.querySelectorAll('.slide-in');
+          
+          // Observe each element
+          slideElements.forEach(element => {
+            observer.observe(element);
+          });
+        });
+      </script>
+    </div>
+
+    <!-- story-section -->
+
+    <div class="story-section" id="blog">
+      <div class="story-content">
+          <h1>Our Story</h1>
+          
+          <div class="slider-container">
+              <div class="slider" id="mediumSlider">
+                  <!-- Dynamic articles will be injected here -->
+              </div>
+          </div>
+  
+          <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="next" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+  </div>
+
+    <div class="newsletter-section" id="footer">
+      <h2>Follow the latest trends</h2>
+      <p>With our daily newsletter</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="you@example.com" required />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/easing/EasePack.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Function to check if element is in viewport
+        function isInViewport(element) {
+          const rect = element.getBoundingClientRect();
+          return (
+            rect.top <= window.innerHeight * 0.75 && // Trigger when element is 75% in view
+            rect.bottom >= 0
+          );
+        }
+
+        // Function to handle scroll events
+        function handleScroll() {
+          const contentSection = document.getElementById("about");
+
+          if (
+            isInViewport(contentSection) &&
+            !contentSection.classList.contains("visible")
+          ) {
+            contentSection.classList.add("visible");
+          }
+        }
+
+        // Listen for scroll events
+        window.addEventListener("scroll", handleScroll);
+
+        // Check on initial load as well
+        handleScroll();
+
+        // Optional: Add parallax effect on mouse movement for 3D depth
+        const contentSection = document.getElementById("about");
+        contentSection.addEventListener("mousemove", function (e) {
+          if (window.innerWidth > 768) {
+            // Only on desktop
+            const title = this.querySelector("h1");
+            const img = this.querySelector("img");
+
+            // Calculate mouse position relative to the center of the element
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            // Apply subtle transform based on mouse position
+            title.style.transform = `translateZ(10px) rotateY(${
+              x * 0.01
+            }deg) rotateX(${-y * 0.01}deg)`;
+            img.style.transform = `translateZ(20px) rotateY(${
+              -x * 0.02
+            }deg) rotateX(${y * 0.01}deg)`;
+          }
+        });
+
+        // Reset transforms when mouse leaves
+        contentSection.addEventListener("mouseleave", function () {
+          const title = this.querySelector("h1");
+          const img = this.querySelector("img");
+
+          title.style.transform = "";
+          img.style.transform = "";
+
+          // Let the normal animations take over again
+          if (this.classList.contains("visible")) {
+            img.style.animation = "float 6s ease-in-out infinite";
+          }
+        });
+      });
+      
+      
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+
+        hamburger.addEventListener("click", function () {
+          const isOpen = hamburger.getAttribute("data-open") === "true";
+          hamburger.setAttribute("data-open", !isOpen);
+          navLinks.classList.toggle("active");
+        });
+
+        // Animated stars implementation
+        const particlesSection = document.getElementById("particles-section");
+        const starCanvas = document.createElement("canvas");
+        starCanvas.id = "starry-canvas";
+        particlesSection.appendChild(starCanvas);
+
+        // Hide the static background if canvas is supported
+        const staticStarryBg = document.getElementById("starry-background");
+        if (staticStarryBg && starCanvas.getContext) {
+          staticStarryBg.style.display = "none";
+        }
+
+        const canvas = document.getElementById("starry-canvas");
+        if (canvas.getContext) {
+          const ctx = canvas.getContext("2d");
+
+          // Make canvas full size
+          canvas.width = particlesSection.offsetWidth;
+          canvas.height = particlesSection.offsetHeight;
+
+          // Star properties
+          const stars = [];
+          const maxStars = 150; // More stars for better effect
+
+          // Create stars with various properties
+          for (let i = 0; i < maxStars; i++) {
+            stars.push({
+              x: Math.random() * canvas.width,
+              y: Math.random() * canvas.height,
+              radius: Math.random() * 2,
+              vx: Math.floor(Math.random() * 50) - 25,
+              vy: Math.floor(Math.random() * 50) - 25,
+              opacity: Math.random(),
+              speed: 0.05 + Math.random() * 0.1,
+            });
+          }
+
+          // Draw the scene
+          function draw() {
+            ctx.globalAlpha = 0.2;
+            ctx.fillStyle = "rgba(13, 27, 66, 0.1)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.globalAlpha = 1;
+
+            ctx.globalCompositeOperation = "lighter";
+
+            for (let i = 0; i < stars.length; i++) {
+              const star = stars[i];
+
+              ctx.beginPath();
+              ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
+
+              // Create a gradient for star glow
+              const gradient = ctx.createRadialGradient(
+                star.x,
+                star.y,
+                0,
+                star.x,
+                star.y,
+                star.radius * 2
+              );
+              gradient.addColorStop(0, `rgba(255, 255, 255, ${star.opacity})`);
+              gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+
+              ctx.fillStyle = gradient;
+              ctx.fill();
+
+              // Move stars
+              star.x += star.vx * star.speed;
+              star.y += star.vy * star.speed;
+
+              // Boundaries check with wrapping
+              if (star.x < -star.radius) star.x = canvas.width + star.radius;
+              if (star.x > canvas.width + star.radius) star.x = -star.radius;
+              if (star.y < -star.radius) star.y = canvas.height + star.radius;
+              if (star.y > canvas.height + star.radius) star.y = -star.radius;
+
+              // Twinkle effect
+              star.opacity =
+                Math.sin(Date.now() * 0.001 * star.speed * 2) * 0.5 + 0.5;
+            }
+
+            requestAnimationFrame(draw);
+          }
+
+          // Handle window resize
+          window.addEventListener("resize", function () {
+            canvas.width = particlesSection.offsetWidth;
+            canvas.height = particlesSection.offsetHeight;
+          });
+
+          // Start animation
+          draw();
+        }
+      });
+
+
+      const mediumArticle = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@nightowlmystery00";
+document.addEventListener("DOMContentLoaded", () => {
+    fetch(mediumArticle)
+        .then(res => res.json())
+        .then(data => {
+            const articles = data.items;
+            const slider = document.getElementById('mediumSlider');
+            
+            // Create a slider with cards
+            articles.slice(0, 8).forEach((article, index) => {
+                const articleDiv = document.createElement('div');
+                articleDiv.classList.add('article');
+                
+                const description = article.description.replace(/<[^>]*>/g, '');  // Strip HTML tags from description
+                const shortDescription = description.length > 120 ? description.substring(0, 120) + '...' : description;
+                
+                // Extract a shorter title for display
+                const shortTitle = article.title.length > 50 ? article.title.substring(0, 50) + '...' : article.title;
+                
+                const thumbnail = article.thumbnail ? article.thumbnail : "https://cdn-images-1.medium.com/fit/c/150/150/1*pfqEMGZVqsQCj3P_mXsFlA.png";
+
+                articleDiv.innerHTML = `
+                    <div class="article-card">
+                        <img src="${thumbnail}" alt="Article Image" class="article-image">
+                        <div class="article-header">
+                            <h3>${shortTitle}</h3>
+                        </div>
+                        <p class="article-description">${shortDescription}</p>
+                        <p>${formatDate(article.pubDate)}</p>
+                        <a href="${article.link}" target="_blank">Read more</a>
+                    </div>
+                `;
+
+                slider.appendChild(articleDiv);
+            });
+
+            // Show the first 4 cards initially
+            moveSlide(0);
+        })
+        .catch(error => {
+            console.error("Error fetching Medium articles:", error);
+            // Fallback content if API fails
+            const slider = document.getElementById('mediumSlider');
+            slider.innerHTML = `
+                <div class="article" style="display: block">
+                    <div class="article-card">
+                        <img src="https://cdn-images-1.medium.com/fit/c/300/300/1*pfqEMGZVqsQCj3P_mXsFlA.png" class="article-image">
+                        <div class="article-header">
+                            <h3>Unable to load articles</h3>
+                        </div>
+                        <p class="article-description">Please check your connection and try again later.</p>
+                        <p>${new Date().toISOString().split('T')[0]}</p>
+                        <a href="https://medium.com" target="_blank">Visit Medium</a>
+                    </div>
+                </div>
+            `;
+        });
+});
+
+// Format date to match the format in the screenshot (YYYY-MM-DD HH:MM:SS)
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+    
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+let currentSlide = 0;
+
+function moveSlide(n) {
+    const slider = document.getElementById('mediumSlider');
+    const articles = slider.getElementsByClassName('article');
+    const totalArticles = articles.length;
+    
+    // Calculate how many articles to show based on screen width
+    let articlesToShow = 4; // Default for large screens
+    
+    if (window.innerWidth <= 1100) {
+        articlesToShow = 3;
+    }
+    if (window.innerWidth <= 900) {
+        articlesToShow = 2;
+    }
+    if (window.innerWidth <= 600) {
+        articlesToShow = 1;
+    }
+    
+    // Update current slide index with bounds checking
+    currentSlide = currentSlide + n;
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide > totalArticles - articlesToShow) currentSlide = totalArticles - articlesToShow;
+    
+    // Hide all articles
+    for (let i = 0; i < totalArticles; i++) {
+        articles[i].style.display = 'none';
+    }
+    
+    // Show the current set of articles
+    for (let i = currentSlide; i < currentSlide + articlesToShow; i++) {
+        if (i < totalArticles) {
+            articles[i].style.display = 'block';
+        }
+    }
+}
+
+// Recalculate on resize
+window.addEventListener('resize', function() {
+    moveSlide(0);
+});
+
+
+(function () {
+      var width,
+        height,
+        largeHeader,
+        canvas,
+        ctx,
+        points,
+        target,
+        animateHeader = true;
+
+      // Main
+      initHeader();
+      initAnimation();
+      addListeners();
+
+      function initHeader() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        target = { x: width / 2, y: height / 2 };
+
+        largeHeader = document.getElementById("large-header");
+        if (!largeHeader) return;
+        
+        largeHeader.style.height = height + "px";
+
+        canvas = document.getElementById("demo-canvas");
+        if (!canvas) return;
+        
+        canvas.width = width;
+        canvas.height = height;
+        ctx = canvas.getContext("2d");
+
+        // create points
+        points = [];
+        for (var x = 0; x < width; x = x + width / 20) {
+          for (var y = 0; y < height; y = y + height / 20) {
+            var px = x + (Math.random() * width) / 20;
+            var py = y + (Math.random() * height) / 20;
+            var p = { x: px, originX: px, y: py, originY: py };
+            points.push(p);
+          }
+        }
+
+        // for each point find the 5 closest points
+        for (var i = 0; i < points.length; i++) {
+          var closest = [];
+          var p1 = points[i];
+          for (var j = 0; j < points.length; j++) {
+            var p2 = points[j];
+            if (!(p1 == p2)) {
+              var placed = false;
+              for (var k = 0; k < 5; k++) {
+                if (!placed) {
+                  if (closest[k] == undefined) {
+                    closest[k] = p2;
+                    placed = true;
+                  }
+                }
+              }
+
+              for (var k = 0; k < 5; k++) {
+                if (!placed) {
+                  if (getDistance(p1, p2) < getDistance(p1, closest[k])) {
+                    closest[k] = p2;
+                    placed = true;
+                  }
+                }
+              }
+            }
+          }
+          p1.closest = closest;
+        }
+
+        // assign a circle to each point
+        for (var i in points) {
+          var c = new Circle(
+            points[i],
+            2 + Math.random() * 2,
+            "rgba(156,217,249,0.3)"
+          );
+          points[i].circle = c;
+        }
+      }
+
+      // Event handling
+      function addListeners() {
+        if (!("ontouchstart" in window)) {
+          window.addEventListener("mousemove", mouseMove);
+        }
+        window.addEventListener("scroll", scrollCheck);
+        window.addEventListener("resize", resize);
+      }
+
+      function mouseMove(e) {
+        var posy = 0;
+        var posx = 0;
+        if (e.pageX || e.pageY) {
+          posx = e.pageX;
+          posy = e.pageY;
+        } else if (e.clientX || e.clientY) {
+          posx =
+            e.clientX +
+            document.body.scrollLeft +
+            document.documentElement.scrollLeft;
+          posy =
+            e.clientY +
+            document.body.scrollTop +
+            document.documentElement.scrollTop;
+        }
+        target.x = posx;
+        target.y = posy;
+      }
+
+      function scrollCheck() {
+        if (document.body.scrollTop > height) animateHeader = false;
+        else animateHeader = true;
+      }
+
+      function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        if (largeHeader) largeHeader.style.height = height + "px";
+        if (canvas) {
+          canvas.width = width;
+          canvas.height = height;
+        }
+      }
+
+      // animation
+      function initAnimation() {
+        animate();
+        for (var i in points) {
+          shiftPoint(points[i]);
+        }
+      }
+
+      function animate() {
+        if (animateHeader && ctx) {
+          ctx.clearRect(0, 0, width, height);
+          for (var i in points) {
+            // detect points in range
+            if (Math.abs(getDistance(target, points[i])) < 4000) {
+              points[i].active = 0.3;
+              points[i].circle.active = 0.6;
+            } else if (Math.abs(getDistance(target, points[i])) < 20000) {
+              points[i].active = 0.1;
+              points[i].circle.active = 0.3;
+            } else if (Math.abs(getDistance(target, points[i])) < 40000) {
+              points[i].active = 0.02;
+              points[i].circle.active = 0.1;
+            } else {
+              points[i].active = 0;
+              points[i].circle.active = 0;
+            }
+
+            drawLines(points[i]);
+            points[i].circle.draw();
+          }
+        }
+        requestAnimationFrame(animate);
+      }
+
+      function shiftPoint(p) {
+        if (window.TweenLite) {
+          TweenLite.to(p, 1 + 1 * Math.random(), {
+            x: p.originX - 50 + Math.random() * 100,
+            y: p.originY - 50 + Math.random() * 100,
+            ease: Circ.easeInOut,
+            onComplete: function () {
+              shiftPoint(p);
+            }
+          });
+        }
+      }
+
+      // Canvas manipulation
+      function drawLines(p) {
+        if (!p.active || !ctx) return;
+        for (var i in p.closest) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p.closest[i].x, p.closest[i].y);
+          ctx.strokeStyle = "rgba(156,217,249," + p.active + ")";
+          ctx.stroke();
+        }
+      }
+
+      function Circle(pos, rad, color) {
+        var _this = this;
+
+        // constructor
+        (function () {
+          _this.pos = pos || null;
+          _this.radius = rad || null;
+          _this.color = color || null;
+        })();
+
+        this.draw = function () {
+          if (!_this.active || !ctx) return;
+          ctx.beginPath();
+          ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
+          ctx.fillStyle = "rgba(156,217,249," + _this.active + ")";
+          ctx.fill();
+        };
+      }
+
+      // Util
+      function getDistance(p1, p2) {
+        return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
+      }
+    })();
+    document.addEventListener("DOMContentLoaded", function() {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+  const navbar = document.querySelector(".pink-navbar");
+  
+  // Toggle mobile menu
+  hamburger.addEventListener("click", function() {
+    const isOpen = hamburger.getAttribute("data-open") === "true";
+    hamburger.setAttribute("data-open", !isOpen);
+    navLinks.classList.toggle("active");
+    
+    // Prevent scrolling when menu is open
+    document.body.style.overflow = isOpen ? "auto" : "hidden";
+  });
+  
+  // Close menu when clicking a link
+  const navItems = document.querySelectorAll(".nav-link, .register-btn");
+  navItems.forEach(item => {
+    item.addEventListener("click", function() {
+      if (hamburger.getAttribute("data-open") === "true") {
+        hamburger.setAttribute("data-open", false);
+        navLinks.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+    });
+  });
+  
+  // Navbar scroll effect
+  window.addEventListener("scroll", function() {
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+  
+  // Add active state to current page
+  const currentPage = window.location.pathname;
+  // const navLinks = document.querySelectorAll(".nav-link");
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+});
+    
+    document.addEventListener("DOMContentLoaded", function() {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+  const navbar = document.querySelector(".pink-navbar");
+  
+  // Toggle mobile menu
+  hamburger.addEventListener("click", function() {
+    const isOpen = hamburger.getAttribute("data-open") === "true";
+    hamburger.setAttribute("data-open", !isOpen);
+    navLinks.classList.toggle("active");
+    
+    // Prevent scrolling when menu is open
+    document.body.style.overflow = isOpen ? "auto" : "hidden";
+  });
+  
+  // Close menu when clicking a link
+  const navItems = document.querySelectorAll(".nav-link, .register-btn");
+  navItems.forEach(item => {
+    item.addEventListener("click", function() {
+      if (hamburger.getAttribute("data-open") === "true") {
+        hamburger.setAttribute("data-open", false);
+        navLinks.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+    });
+  });
+  
+  // Navbar scroll effect
+  window.addEventListener("scroll", function() {
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+  
+  // Add active state to current page
+  const currentPage = window.location.pathname;
+  // const navLinks = document.querySelectorAll(".nav-link");
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+});
+    
+    
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Taylor-Swift-Outfit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
+    <style>
+      .you-may-also-like {
+      background-color: #ffffff;
+      padding: 4rem 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Section title styling */
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #333;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background: #ffb6c1;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    
+    /* Product items */
+    .product-item {
+      display: flex;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 300px; /* Fixed height for all cards */
+    }
+    
+    .product-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(255, 182, 193, 0.3);
+      border: 1px solid #ffb6c1;
+    }
+    
+    /* Reverse layout for even items */
+    .product-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    
+    .product-image {
+      width: 40%;
+      height: 300px; /* Fixed height */
+      overflow: hidden;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .product-item:hover .product-image img {
+      transform: scale(1.05);
+    }
+    
+    .product-content {
+      width: 60%;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #fff8fa; /* Very light pink background */
+    }
+    
+    .product-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    
+    .product-description {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ff6b8b; /* Pink price */
+      margin-bottom: 1.5rem;
+    }
+    
+    .product-button {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: #ffb6c1; /* Light pink button */
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+      transition: all 0.3s ease;
+      text-align: center;
+      max-width: 200px;
+    }
+    
+    .product-button:hover {
+      background: #ff8da1; /* Slightly darker pink on hover */
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(255, 182, 193, 0.5);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .product-item,
+      .product-item:nth-child(even) {
+        flex-direction: column;
+        height: auto;
+      }
+      
+      .product-image,
+      .product-content {
+        width: 100%;
+      }
+      
+      .product-image {
+        height: 200px;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+      .tab-active {
+    border-bottom: 2px solid #ec4899; /* pink-500 */
+    color: #ec4899;
+  }
+      .pp-QNBW45MDLYALW {
+        text-align: center;
+        border: none;
+        border-radius: 1.5rem;
+        min-width: 11.625rem;
+        padding: 0 2rem;
+        height: 3.125rem;
+        font-weight: bold;
+        background-color: #000000;
+        color: #ffffff;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        cursor: pointer;
+      }
+      .swiftie-pink { color: #ff5c8a; }
+    .swiftie-pink-bg { background-color: #ff5c8a; }
+    .swiftie-light-pink-bg { background-color: #fff0f5; }
+    .bookmark-thumb { transition: transform 0.2s; }
+    .bookmark-thumb:hover { transform: translateY(-5px); }
+    .tab-active { border-bottom: 3px solid #ff5c8a; color: #ff5c8a; }
+    
+    /* Blur Load CSS */
+    .blur-load {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .blur-load::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      animation: pulse 2.5s infinite;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0; }
+      50% { opacity: 0.3; }
+      100% { opacity: 0; }
+    }
+
+    .blur-load.loaded::before {
+      animation: none;
+      content: none;
+    }
+
+    .blur-load img {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .blur-load.loaded img {
+      opacity: 1;
+    }
+    </style>
+    <link rel="stylesheet" href="css/product.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+
+    <nav class="pink-navbar">
+      <div class="pink-navbar-container">
+        <a href="./index.html" class="pink-logo">
+          <img src="image/logo.png" alt="Logo" />
+        </a>
+        
+        <div class="pink-hamburger" id="hamburger" aria-label="Toggle navigation" data-open="false">
+          <div class="hamburger-box">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </div>
+        </div>
+    
+    <div class="pink-nav-links" id="nav-links">
+      <ul>
+        <li><a href="./index.html" class="nav-link">Home</a></li>
+        <li><a href="./index.html" class="nav-link">Products</a></li>
+        <li><a href="./index.html" class="nav-link">About Us</a></li>
+        <li><a href="./index.html" class="nav-link">Blogs</a></li>
+        <li><a href="./index.html" class="register-btn">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <section id="product-section" class="bg-[#fff5ec] py-10 mt-20 mx-auto">
+      <div class="container mx-auto flex flex-col md:flex-row px-4">
+
+        <!-- leftSidepart -->
+
+        <div class="w-full md:w-1/2 pr-0 md:pr-10 mb-8 md:mb-0">
+          <!-- Cube Slider Container -->
+          <div class="slider-container">
+            <div class="main-slider">
+              <div class="cube-container">
+                <div class="slide">
+                  <div class="blur-load" style="background-image:url(./image/Ts-Eras/1-small.jpg);">
+                    <img src="./image/Ts-Eras/1.png" alt="Image 1" loading="lazy"/>
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="blur-load" style="background-image:url(./image/Ts-Eras/2-small.jpg);">
+                    <img src="./image/Ts-Eras/2.png" alt="Image 2" loading="lazy"/>
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="blur-load" style="background-image:url(./image/Ts-Eras/3-small.jpg);">
+                    <img src="./image/Ts-Eras/3.png" alt="Image 3" loading="lazy"/>
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="blur-load" style="background-image:url(./image/Ts-Eras/4-small.jpg);">
+                    <img src="./image/Ts-Eras/4.png" alt="Image 4" loading="lazy"/>
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="blur-load" style="background-image:url(./image/Ts-Eras/5-small.jpg);">
+                    <img src="./image/Ts-Eras/5.png" alt="Image 5" loading="lazy"/>
+                  </div>
+                </div>
+              </div>
+              <button class="nav-button prev">&#10094;</button>
+              <button class="nav-button next">&#10095;</button>
+            </div>
+            <div class="thumbnail-container">
+              <div class="thumbnail active">
+                <div class="blur-load" style="background-image:url(./image/Ts-Eras/1-small.jpg);">
+                  <img src="./image/Ts-Eras/1.png" alt="Thumbnail 1" loading="lazy"/>
+                </div>
+              </div>
+              <div class="thumbnail">
+                <div class="blur-load" style="background-image:url(./image/Ts-Eras/2-small.jpg);">
+                  <img src="./image/Ts-Eras/2.png" alt="Thumbnail 2" loading="lazy"/>
+                </div>
+              </div>
+              <div class="thumbnail">
+                <div class="blur-load" style="background-image:url(./image/Ts-Eras/3-small.jpg);">
+                  <img src="./image/Ts-Eras/3.png" alt="Thumbnail 3" loading="lazy"/>
+                </div>
+              </div>
+              <div class="thumbnail">
+                <div class="blur-load" style="background-image:url(./image/Ts-Eras/4-small.jpg);">
+                  <img src="./image/Ts-Eras/4.png" alt="Thumbnail 4" loading="lazy"/>
+                </div>
+              </div>
+              <div class="thumbnail">
+                <div class="blur-load" style="background-image:url(./image/Ts-Eras/5-small.jpg);">
+                  <img src="/image/Ts-Eras/5.png" alt="Thumbnail 5" loading="lazy"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- rightSidepart -->
+
+        <div class="w-full md:w-1/2 px-4 sm:px-6 lg:px-8">
+
+          <!-- Limited Edition Badge -->
+          <div class="inline-block bg-pink-100 text-pink-600 rounded-full px-3 py-1 text-xs font-semibold mb-4">
+            Limited Edition
+          </div>
+
+          <h1 class="text-3xl md:text-4xl font-bold mb-3 leading-tight text-gray-900">
+            Relive the Magic of the Taylor Swift
+            <span class="swiftie-pink">Eras Tour</span>
+          </h1>
+          <h2 class="text-xl md:text-2xl font-medium mb-6 text-gray-700">Album Collage Bookmarks</h2>
+          
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            </div>
+            <span class="ml-2 text-gray-600">4.9 (128 reviews)</span>
+          </div>
+
+          <!-- Quick Description -->
+          <p class="text-gray-600 mb-6">
+            10 premium bookmarks (8.2" × 2.75") featuring Taylor's iconic outfits from each era. 
+            Perfect for Swifties who love to read!
+          </p>
+          <!-- price -->
+          <div class="mb-6">
+            <!-- Store base price in data attribute -->
+            <p
+              class="text-4xl font-bold text-gray-900 mb-1"
+              id="price"
+              data-base-price="9.99"
+            >
+              $9.99
+            </p>
+          
+            <p class="text-sm text-gray-500 mb-1">
+              by <span class="font-medium">NightOwl</span>
+            </p>
+          
+            <p class="text-green-600 font-medium flex items-center">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              In stock – ships in 1–2 business days
+            </p>
+          </div>
+          
+          <!-- Quantity and Add to Cart -->
+
+          <div
+            class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8"
+          >
+            <div class="w-full sm:w-1/3">
+              <label for="quantity" class="block mb-2 font-medium text-gray-700">Quantity:</label>
+              <div class="flex border border-gray-300 rounded-md overflow-hidden">
+
+                <button
+                  type="button"
+                  onclick="changeQuantity(-1)"
+                  class="px-3 py-2 bg-gray-100 hover:bg-gray-200"
+                >
+                  –
+                </button>
+              
+                <input
+                  type="number"
+                  id="quantity"
+                  value="1"
+                  min="1"
+                  max="5"
+                  readonly
+                  class="w-full text-center focus:outline-none"
+                />
+              
+                <button
+                  type="button"
+                  onclick="changeQuantity(1)"
+                  class="px-3 py-2 bg-gray-100 hover:bg-gray-200"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
+            <div class="w-full sm:w-2/3">
+              <label class="block mb-2 font-medium text-transparent">Add to Cart</label>
+              <button class="w-full swiftie-pink-bg text-white py-3 px-6 rounded-md font-medium hover:bg-pink-600 transition flex items-center justify-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          
+          </div>
+
+          <!-- Payment Options -->
+
+          <div class="flex flex-wrap justify-between gap-4 items-start mt-6">
+            <!-- Razorpay Button -->
+            <form class="flex-1 min-w-[200px]">
+              <script
+                src="https://checkout.razorpay.com/v1/payment-button.js"
+                data-payment_button_id="pl_P6WSlPZg4tRpJR"
+                async
+              ></script>
+            </form>
+            
+            <!-- PayPal Standard Button -->
+            <form
+              action="https://www.paypal.com/ncp/payment/QNBW45MDLYALW"
+              method="post"
+              target="_top"
+              class="flex flex-col items-center gap-2 text-center"
+            >
+              <input
+                class="pp-QNBW45MDLYALW bg-blue-600 text-white font-medium px-4 py-2 rounded cursor-pointer"
+                type="submit"
+                value="Buy Now"
+              />
+              <img
+                src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg"
+                alt="Accepted cards"
+                class="h-5"
+              />
+              <section class="text-xs text-gray-600 flex items-center gap-1">
+                Powered by
+                <img
+                  src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg"
+                  alt="PayPal"
+                  class="h-3"
+                />
+              </section>
+            </form>
+            
+            <!-- PayPal JS Button -->
+            <div id="paypal-button-container" class="flex-1 min-w-[200px]"></div>
+          </div>
+          
+          <!-- Social Share -->
+
+          <div class="flex space-x-4 mb-8">
+            <span class="text-sm text-gray-600 mr-2">Share:</span>
+            <a href="#" class="text-gray-500 hover:text-pink-500">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-pink-500">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.054 10.054 0 01-3.127 1.184 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-pink-500">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-pink-500">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Features at a glance -->
+
+          <div class="bg-pink-50 rounded-lg p-4 mb-6">
+            <h3 class="font-semibold text-gray-800 mb-3">Features at a Glance</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-pink-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span>Set of 10 premium bookmarks (8.2" × 2.75")</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-pink-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span>Includes tassel versions for customization</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-pink-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span>High-quality designs featuring iconic Eras Tour outfits</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-pink-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span>Easy to print DIY format with double-sided pages</span>
+              </li>
+            </ul>
+          </div>
+
+          
+          
+        </div>
+      </div>
+    </section>
+
+    <div class="mt-12 container mx-auto px-4">
+      <!-- Tab Navigation -->
+      <div class="flex border-b border-gray-200" id="tab-buttons">
+        <button 
+          data-tab="details"
+          class="tab-button py-3 px-4 font-medium text-gray-700 hover:text-pink-500 tab-active">
+          Details
+        </button>
+        <button 
+          data-tab="shipping"
+          class="tab-button py-3 px-4 font-medium text-gray-700 hover:text-pink-500">
+          Shipping
+        </button>
+        <button 
+          data-tab="reviews"
+          class="tab-button py-3 px-4 font-medium text-gray-700 hover:text-pink-500">
+          Reviews
+        </button>
+        <button 
+          data-tab="faq"
+          class="tab-button py-3 px-4 font-medium text-gray-700 hover:text-pink-500">
+          FAQ
+        </button>
+      </div>
+    
+      <!-- Tab Content -->
+      <div class="py-6">
+        <div id="details" class="tab-content">
+          <!-- Details Tab Content -->
+          <p>Capture the unforgettable memories of the Taylor Swift Eras Tour with our specially designed album collage bookmarks.</p>
+          <p>Each bookmark recreates era tour magic based on her outfit album-wise, allowing you to relive the magic of her presence every time you open your book.</p>
+          
+          <h3 class="font-semibold text-lg mt-6 mb-2">Features:</h3>
+          <ul class="list-disc list-inside space-y-2 pl-4">
+            <li><span class="font-medium">High quality:</span> Original, high quality & unique designs created just for you.</li>
+            <li><span class="font-medium">Includes a tassel version:</span> Customize and add tassels to your favorite bookmarks.</li>
+            <li><span class="font-medium">Iconic Designs:</span> Outfits she wore while performing songs from her albums.</li>
+            <li><span class="font-medium">Get involved in creating your favorite bookmarks:</span> Easy to print, double pages included, easy to use.</li>
+            <li><span class="font-medium">Perfect Gift:</span> Ideal for music lovers and avid bookaholics.</li>
+          </ul>
+          
+          <p class="mt-4">Capture the magic of the tour in every page you turn. Order your set of DIY bookmarks today and keep those cherished memories alive!</p>
+          
+          <div class="bg-gray-50 p-4 rounded-lg mt-6">
+            <h3 class="font-semibold text-lg mb-2">Product Specifications:</h3>
+            <ul class="list-disc list-inside space-y-2 pl-4">
+              <li>Material: Premium cardstock</li>
+              <li>Size: 8.2" × 2.75"</li>
+              <li>Weight: 0.5 oz each</li>
+              <li>Print Quality: High resolution</li>
+              <li>Design: Double-sided</li>
+                <li>Includes: 10 bookmarks</li>
+            </ul>
+            </div>
+        </div>
+    
+        <div id="shipping" class="tab-content hidden">
+          <p>We ship worldwide! All orders are processed within 1-2 business days. You will receive a tracking number once your order has shipped.</p>
+          <p>Shipping times may vary based on your location:</p>
+          <ul class="list-disc list-inside space-y-2 pl-4">
+            <li>USA: 3-5 business days</li>
+            <li>Canada: 5-10 business days</li>
+            <li>International: 7-21 business days</li>
+          </ul>
+          <p>For any shipping inquiries, please contact us at <a href="mailto:anshumanpanda27@gmail.com" class="text-pink-500"></a></p>
+        </div>
+        <div id="reviews" class="tab-content hidden">
+          <div  class="max-w-md mx-auto my-8">
+            <h3 class="font-semibold text-lg mb-4 text-center">Customer Reviews</h3>
+          
+            <div id="review-slider" class="relative bg-white shadow-md rounded p-4">
+              <div id="review-content">
+                <!-- Content will be injected here -->
+              </div>
+          
+              <!-- Navigation Buttons -->
+              <div class="flex justify-between mt-4">
+                <button onclick="prevReview()" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">&larr; Prev</button>
+                <button onclick="nextReview()" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">Next &rarr;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+    
+        <div id="faq" class="tab-content hidden">
+          <!-- FAQ Tab Content -->
+          <h3 class="font-semibold text-lg mb-4">Frequently Asked Questions</h3>
+          <!-- (Keep FAQ content here as-is) -->
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <section class="you-may-also-like">
+      <div class="container">
+        <h2 class="section-title">You May Also Like</h2>
+            
+        <!-- Product 1: Image on the left -->
+        <div class="product-item slide-from-left">
+          <div class="product-image">
+            <img src="./image/Ts-illustrations/main.png" alt="Taylor Swift Illustrations">
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">Taylor Swift Illustrations</h3>
+            <p class="product-description">A beautiful collection of Taylor Swift illustrations featuring iconic moments from her performances and music videos.</p>
+            <p class="product-price">$2.99</p>
+            <a href="./Ts-Illustrations.html" class="product-button">View Details</a>
+          </div>
+        </div>
+            
+        <!-- Product 2: Image on the right (automatic via CSS) -->
+        <div class="product-item slide-from-right">
+          <div class="product-image">
+            <img src="./image/Banaras/main.png" alt="Banaras">
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">Banaras</h3>
+            <p class="product-description">Explore the spiritual essence of Banaras through this stunning visual journey capturing the beauty of India's holiest city.</p>
+            <p class="product-price">$3.99</p>
+            <a href="./Banaras.html" class="product-button">View Details</a>
+          </div>
+        </div>
+            
+        <!-- Product 3: Image on the left (automatic via CSS) -->
+        <div class="product-item slide-from-left">
+          <div class="product-image">
+            <img src="./image/Ts-Tour/main.png" alt="Taylor Swift Outfit">
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">Taylor Swift Outfit</h3>
+            <p class="product-description">Get inspired by Taylor Swift's incredible tour outfits and style evolution from The Eras Tour and beyond.</p>
+            <p class="product-price">$4.99</p>
+            <a href="./Ts-outfit.html" class="product-button">View Details</a>
+          </div>
+        </div>
+            
+      </div>
+    
+      <style>
+        /* Base animation styles */
+        .slide-from-left,
+        .slide-from-right {
+          opacity: 0;
+          transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        /* Left to right animation */
+        .slide-from-left {
+          transform: translateX(-100px);
+        }
+        
+        /* Right to left animation */
+        .slide-from-right {
+          transform: translateX(100px);
+        }
+        
+        /* Visible state for both animations */
+        .slide-from-left.visible,
+        .slide-from-right.visible {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        
+        /* Staggered animation delay for product items */
+        .product-item:nth-child(1) {
+          transition-delay: 0.1s;
+        }
+        
+        .product-item:nth-child(2) {
+          transition-delay: 0.3s;
+        }
+        
+        .product-item:nth-child(3) {
+          transition-delay: 0.5s;
+        }
+      </style>
+    
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          // Intersection Observer to detect when elements enter viewport
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Once it's visible, no need to observe anymore
+                observer.unobserve(entry.target);
+              }
+            });
+          }, {
+            root: null, // viewport
+            threshold: 0.15, // trigger when at least 15% of the element is visible
+            rootMargin: '0px' // no margin
+          });
+          
+          // Get all slide elements
+          const leftSlideElements = document.querySelectorAll('.slide-from-left');
+          const rightSlideElements = document.querySelectorAll('.slide-from-right');
+          
+          // Observe each element
+          leftSlideElements.forEach(element => {
+            observer.observe(element);
+          });
+          
+          rightSlideElements.forEach(element => {
+            observer.observe(element);
+          });
+        });
+      </script>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cubeContainer = document.querySelector(".cube-container");
+        const thumbnails = document.querySelectorAll(".thumbnail");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+
+        let currentIndex = 0;
+        let rotationY = 0;
+        let isAnimating = false;
+        const totalSlides = thumbnails.length;
+
+        // Set initial position
+        updateCube();
+
+        function updateCube() {
+          // Calculate rotation based on current index
+          rotationY = currentIndex * -90; // -90 degrees per slide
+
+          // Apply the rotation
+          cubeContainer.style.transform = `rotateY(${rotationY}deg)`;
+
+          // Update thumbnails
+          thumbnails.forEach((thumb, i) => {
+            if (i === currentIndex) {
+              thumb.classList.add("active");
+            } else {
+              thumb.classList.remove("active");
+            }
+          });
+        }
+
+        function goToSlide(index) {
+          if (isAnimating) return;
+          isAnimating = true;
+
+          currentIndex = index;
+          updateCube();
+
+          // Wait for animation to complete
+          setTimeout(() => {
+            isAnimating = false;
+          }, 1000);
+        }
+
+        // Next slide
+        nextBtn.addEventListener("click", function () {
+          let newIndex = (currentIndex + 1) % totalSlides;
+          goToSlide(newIndex);
+        });
+
+        // Previous slide
+        prevBtn.addEventListener("click", function () {
+          let newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          goToSlide(newIndex);
+        });
+
+        // Thumbnail click
+        thumbnails.forEach((thumbnail, index) => {
+          thumbnail.addEventListener("click", function () {
+            if (index !== currentIndex) {
+              goToSlide(index);
+            }
+          });
+        });
+
+        // Add keyboard navigation
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowRight") {
+            nextBtn.click();
+          } else if (e.key === "ArrowLeft") {
+            prevBtn.click();
+          }
+        });
+
+        // Add touch support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document
+          .querySelector(".main-slider")
+          .addEventListener("touchstart", function (e) {
+            touchStartX = e.changedTouches[0].screenX;
+          });
+
+        document
+          .querySelector(".main-slider")
+          .addEventListener("touchend", function (e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+          });
+
+        function handleSwipe() {
+          if (touchStartX - touchEndX > 50) {
+            // Swipe left
+            nextBtn.click();
+          } else if (touchEndX - touchStartX > 50) {
+            // Swipe right
+            prevBtn.click();
+          }
+        }
+
+        // Auto-play function
+        let autoplayInterval;
+
+        function startAutoplay() {
+          autoplayInterval = setInterval(() => {
+            let newIndex = (currentIndex + 1) % totalSlides;
+            goToSlide(newIndex);
+          }, 5000);
+        }
+
+        function stopAutoplay() {
+          clearInterval(autoplayInterval);
+        }
+
+        // Start autoplay
+        startAutoplay();
+
+        // Stop autoplay on hover
+        document
+          .querySelector(".slider-container")
+          .addEventListener("mouseenter", stopAutoplay);
+        document
+          .querySelector(".slider-container")
+          .addEventListener("mouseleave", startAutoplay);
+      });
+
+      document.addEventListener("DOMContentLoaded", function() {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+  const navbar = document.querySelector(".pink-navbar");
+  
+  // Toggle mobile menu
+  hamburger.addEventListener("click", function() {
+    const isOpen = hamburger.getAttribute("data-open") === "true";
+    hamburger.setAttribute("data-open", !isOpen);
+    navLinks.classList.toggle("active");
+    
+    // Prevent scrolling when menu is open
+    document.body.style.overflow = isOpen ? "auto" : "hidden";
+  });
+  
+  // Close menu when clicking a link
+  const navItems = document.querySelectorAll(".nav-link, .register-btn");
+  navItems.forEach(item => {
+    item.addEventListener("click", function() {
+      if (hamburger.getAttribute("data-open") === "true") {
+        hamburger.setAttribute("data-open", false);
+        navLinks.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+    });
+  });
+  
+  // Navbar scroll effect
+  window.addEventListener("scroll", function() {
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+  
+  // Add active state to current page
+  const currentPage = window.location.pathname;
+  // const navLinks = document.querySelectorAll(".nav-link");
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+});
+    
+      function toggleDetails() {
+    const content = document.getElementById("details-content");
+    const arrow = document.getElementById("arrow-icon");
+
+    content.classList.toggle("hidden");
+    arrow.classList.toggle("rotate-180");
+  }
+    
+  const buttons = document.querySelectorAll(".tab-button");
+  const contents = document.querySelectorAll(".tab-content");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const tab = button.getAttribute("data-tab");
+
+      // Remove active class from all buttons
+      buttons.forEach(btn => btn.classList.remove("tab-active"));
+      // Hide all tab content
+      contents.forEach(content => content.classList.add("hidden"));
+
+      // Activate clicked tab and show its content
+      button.classList.add("tab-active");
+      document.getElementById(tab).classList.remove("hidden");
+    });
+  });
+
+  const reviews = [
+    {
+      name: "Anonymous Fan",
+      stars: 5,
+      comment: "Absolutely love these bookmarks! Great quality and the designs capture each era perfectly."
+    },
+    {
+      name: "John Doe",
+      stars: 4,
+      comment: "Nice product overall, but delivery took longer than expected."
+    },
+    {
+      name: "Emily Smith",
+      stars: 5,
+      comment: "Fantastic quality and attention to detail. Would definitely recommend!"
+    }
+  ];
+
+  let currentReview = 0;
+
+  function showReview(index) {
+    const review = reviews[index];
+    const starsHTML = "★".repeat(review.stars) + "☆".repeat(5 - review.stars);
+    document.getElementById("review-content").innerHTML = `
+      <div class="text-yellow-400 text-lg">${starsHTML}</div>
+      <div class="mt-2 font-semibold">${review.name}</div>
+      <p class="text-gray-600 mt-1">"${review.comment}"</p>
+    `;
+  }
+
+  function prevReview() {
+    currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+    showReview(currentReview);
+  }
+
+  function nextReview() {
+    currentReview = (currentReview + 1) % reviews.length;
+    showReview(currentReview);
+  }
+
+  // Initial load
+  showReview(currentReview);
+
+
+
+  function blurLoadImages() {
+  const blurDivs = document.querySelectorAll('.blur-load');
+  
+  blurDivs.forEach(div => {
+    const img = div.querySelector('img');
+    
+    function loaded() {
+      div.classList.add('loaded');
+    }
+    
+    if (img.complete) {
+      loaded();
+    } else {
+      img.addEventListener('load', loaded);
+    }
+  });
+}
+
+// Run once DOM is loaded
+document.addEventListener('DOMContentLoaded', blurLoadImages);
+    </script>
+    <script src="./js/payment-script.js"></script>
+  </body>
+</html>
