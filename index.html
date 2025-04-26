@@ -614,6 +614,21 @@ window.addEventListener('resize', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if current URL is the index page
+  const currentUrl = window.location.href;
+  if (currentUrl === 'http://127.0.0.1:5500/index.html' || 
+      currentUrl.endsWith('/index.html')) {
+    document.body.classList.add('home-active');
+  } else {
+    document.body.classList.remove('home-active');
+  }
+  
+  // You can also add event listeners for navigation if you have a SPA
+  // This depends on how your navigation works
+});
+
+
 (function () {
       var width,
         height,

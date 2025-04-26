@@ -1,15 +1,20 @@
 
 
 .pink-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.15);
-    z-index: 1000;
-    transition: all 0.3s ease;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white; /* Default color for other pages */
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.15);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Dark blue background when on index.html */
+.home-active .pink-navbar {
+  background-color: rgb(6, 6, 80);
+}
   
   .pink-navbar-container {
     display: flex;
@@ -60,6 +65,9 @@
     padding: 0.5rem 0;
     position: relative;
     transition: color 0.3s ease;
+  }
+  .home-active .nav-link {
+    color: #FFA500; /* pink-600 */
   }
   
   .nav-link::after {
